@@ -35,10 +35,6 @@ public class Farm {
                 pocetHus = Integer.parseInt(args[2]);
                 pocetKraliku = Integer.parseInt(args[3]);
                 
-                System.out.printf("Prijate argumenty: %d %d\n", 
-                        pocetHus,
-                        pocetKraliku);
-                
                 break;
                 
             case "fromuser":
@@ -58,6 +54,9 @@ public class Farm {
                 
                 break;
         }
+                
+        System.out.printf("Pocet hus: %d\n", pocetHus);
+        System.out.printf("Pocet kraliku: %d\n", pocetKraliku);
 
         final int pocetZvirat = pocetHus + pocetKraliku;
         final int pocetNohou = pocetHus * 2 + pocetKraliku * 4;

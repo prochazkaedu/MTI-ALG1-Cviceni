@@ -44,11 +44,6 @@ public class Sentence {
                 child_birth_year = Integer.parseInt(args[3]);
                 class_suffix = args[4];
                 
-                System.out.printf("Prijate argumenty: %s %d %s\n", 
-                        child_name,
-                        child_birth_year,
-                        class_suffix);
-                
                 break;
                 
             case "fromuser":
@@ -71,6 +66,10 @@ public class Sentence {
                 
                 break;
         }
+        
+        System.out.printf("Jmeno ditete: %s\n", child_name);
+        System.out.printf("Rok narozeni ditete: %d\n", child_birth_year);
+        System.out.printf("Pripona tridy: %s\n", class_suffix);
         
         final int current_year = Year.now().getValue();
         

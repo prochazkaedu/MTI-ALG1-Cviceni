@@ -21,7 +21,13 @@ public class Farm {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-                switch(args[1]) {
+        if(args.length < 2) {
+            System.err.printf("Chybi parametr pro metodu vstupu dat.\n\n");
+            args_invalid = true;
+            return;
+        }
+        
+        switch(args[1]) {
             case "predefined":
                 break;
             

@@ -23,13 +23,17 @@ public class Sentence {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        if(args.length < 2) {
-            System.err.printf("Chybi parametr pro metodu vstupu dat.\n\n");
-            args_invalid = true;
-            return;
-        }
+        // Input parsing
         
-        switch(args[1]) {
+        String inputmethod = "predefined";
+        
+        if(args.length < 2) {
+            System.err.printf("Chybi parametr pro metodu vstupu dat. Pouziji preddefinovane hodnoty.\n");
+        } else {
+            inputmethod = args[1];
+        }
+
+        switch(inputmethod) {
             case "predefined":
                 break;
             
@@ -71,9 +75,13 @@ public class Sentence {
         System.out.printf("Rok narozeni ditete: %d\n", child_birth_year);
         System.out.printf("Pripona tridy: %s\n", class_suffix);
         
+        // Data processing
+        
         final int current_year = Year.now().getValue();
         
         final int child_age = current_year - child_birth_year;
+        
+        // Output
         
         if(child_age < 0) {
             System.out.printf("Dite %s se narodi za %d rok(u).\n",

@@ -21,13 +21,17 @@ public class Farm {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        if(args.length < 2) {
-            System.err.printf("Chybi parametr pro metodu vstupu dat.\n\n");
-            args_invalid = true;
-            return;
-        }
+        // Input parsing
         
-        switch(args[1]) {
+        String inputmethod = "predefined";
+        
+        if(args.length < 2) {
+            System.err.printf("Chybi parametr pro metodu vstupu dat. Pouziji preddefinovane hodnoty.\n");
+        } else {
+            inputmethod = args[1];
+        }
+
+        switch(inputmethod) {
             case "predefined":
                 break;
             
@@ -60,12 +64,13 @@ public class Farm {
                 
                 break;
         }
-                
-        System.out.printf("Pocet hus: %d\n", pocetHus);
-        System.out.printf("Pocet kraliku: %d\n", pocetKraliku);
 
+        // Data processing
+        
         final int pocetZvirat = pocetHus + pocetKraliku;
         final int pocetNohou = pocetHus * 2 + pocetKraliku * 4;
+        
+        // Output
         
         System.out.printf("Pocet hus: %d\n", pocetHus);
         System.out.printf("Pocet kraliku: %d\n", pocetKraliku);

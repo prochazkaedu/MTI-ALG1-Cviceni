@@ -25,6 +25,14 @@ public class App {
                           \t\tpredefined - spusti program s preddefinovanymi hodnotami
                           \t\tfromargs pocethus pocetkraliku - spusti program s danymi hodnotami
                           \t\tfromuser - spusti program, pro hodnoty se zepta
+                          \ttoseconds - spusti program ToSeconds.java
+                          \t\tpredefined - spusti program s preddefinovanymi hodnotami
+                          \t\tfromargs hodiny minuty sekundy - spusti program s danymi hodnotami
+                          \t\tfromuser - spusti program, pro hodnoty se zepta
+                          \tbanknotes - spusti program BanknotesCounts.java
+                          \t\tpredefined - spusti program s preddefinovanymi hodnotami
+                          \t\tfromargs hodnota - spusti program s danymi hodnotami
+                          \t\tfromuser - spusti program, pro hodnoty se zepta
                           """);
     }
     
@@ -51,6 +59,20 @@ public class App {
                 Farm.main(args);
                 if(Farm.args_invalid) printhelp();
                 break;
+                
+            case "toseconds":
+                ToSeconds.main(args);
+                if(ToSeconds.args_invalid) printhelp();
+                break;
+                
+            case "banknotes":
+                BanknotesCounts.main(args);
+                if(BanknotesCounts.args_invalid) printhelp();
+                break;
+                
+            default:
+                System.err.printf("Prikaz %s nenalezen.\n\n", args[0]);
+                printhelp();
         }
     }
 }

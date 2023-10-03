@@ -3,20 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package eu.prochazkaml.ulohy02;
+import eu.prochazkaml.inputparser.*;
 
 /**
  *
  * @author michal
  */
 public class uloha_04_rodnecislo {
-    private static String id = "0309172666";
-    
     /**
      * @param args the command line arguments
+     * @throws eu.prochazkaml.inputparser.OutOfArgumentsException
      */
-    public static void main(String[] args) {
-        // TODO - parse input
+    public static void main(String[] args) throws OutOfArgumentsException {
+        InputParser ip = new InputParser(args, 1);
         
+        String id = ip.readLine("Rodne cislo", "0309172666");
+
         int year = Integer.parseInt(id.substring(0, 2));
         int month = Integer.parseInt(id.substring(2, 4));
         int day = Integer.parseInt(id.substring(4, 6));

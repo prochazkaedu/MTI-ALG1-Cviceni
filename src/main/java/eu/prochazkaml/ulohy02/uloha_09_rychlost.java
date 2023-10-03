@@ -3,21 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package eu.prochazkaml.ulohy02;
+import eu.prochazkaml.inputparser.*;
 
 /**
  *
  * @author michal
  */
 public class uloha_09_rychlost {
-    static double maxspeed = 50.0; // in km/h
-    static double length = 123.0; // in metres
-    static double time = 2.43; // in seconds
-    
     /**
      * @param args the command line arguments
+     * @throws eu.prochazkaml.inputparser.OutOfArgumentsException
+     * @throws eu.prochazkaml.inputparser.InvalidTypeException
      */
-    public static void main(String[] args) {
-        // TODO - parse input
+    public static void main(String[] args) throws OutOfArgumentsException, InvalidTypeException {
+        InputParser ip = new InputParser(args, 1);
+        
+        double maxspeed = ip.readPositiveDouble("Maximalni povolena rychlost (km/h)", 50);
+        double length = ip.readPositiveDouble("Delka useku (m)", 123);
+        double time = ip.readPositiveDouble("Doba s(edovaneho useku (s)", 2.43);
         
         double avgspeed = length * time;
         double overlimit = (avgspeed > maxspeed) ? (avgspeed - maxspeed) : 0.0;

@@ -1,4 +1,5 @@
 package eu.prochazkaml.ulohy02;
+import eu.prochazkaml.inputparser.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,13 +11,15 @@ package eu.prochazkaml.ulohy02;
  * @author michal
  */
 public class uloha_02_cas_to_hms {
-    private static int full_seconds = 12345678;
-    
     /**
      * @param args the command line arguments
+     * @throws eu.prochazkaml.inputparser.OutOfArgumentsException
+     * @throws eu.prochazkaml.inputparser.InvalidTypeException
      */
-    public static void main(String[] args) {
-        // TODO - parse input
+    public static void main(String[] args) throws OutOfArgumentsException, InvalidTypeException {
+        InputParser ip = new InputParser(args, 1);
+        
+        int full_seconds = ip.readInt("Doba (s)", 12345678);
         
         int tmpval = full_seconds;
         
